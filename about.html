@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>kaiakairos.net</title> <!-- sets tab name -->
+<link rel="icon" href="images/icon.png"> <!-- sets tab icon -->
+<link rel="stylesheet" href="aboutStyle.css"> <!-- gets css -->
+
+</head>
+
+<script>
+
+function setAge() {
+	var today = new Date();
+	document.getElementById("ageYear").textContent = Math.floor((new Date() - new Date("2002-08-15").getTime()) / 3.15576e+10);
+}
+
+</script>
+
+<body onload="setAge()">
+
+<div class="titleBox"><a href="index.html"> <p> <- back to home </p></a></div>
+
+<div class="bodyBox">
+
+	
+	<div class="imgBox">
+		<img src="images/homePage/character.png">
+		<img src="images/homePage/flowers.png" style="height:196px;transform:translate(760px,390px);">
+	</div>
+	
+	<div class="descriptionBox">
+		<p>Hi! My name is <hl>Kaia!</hl> Welcome to my website!</p>
+		<p>I'm a hobbyist game developer from <hl>Omaha, Nebraska!</hl> I wanted a place to properly organize my work, so here's my site!</p>
+		<p>I'm <hl id="ageYear">--</hl> years old, I started making games in 2011 after figuring out you could add buttons to swap to different slides in powerpoint. I haven't recovered since.</p>
+		<p>Since 2021, I started learning <hl>Godot</hl>, and I've been slowly realizing my silly childhood dream of making real ass video games.</p>
+		<p>You might know me for <hl>waxweaver</hl>, the sandbox game I spent a year making. It's on steam all for free!</p>
+		<p>I'm currently trying to make a turn-based story RPG. It's gone through many interations, and it's been difficult to stick to at times. That with life stuff, it's been rough.</p>
+		<p>However, I've kept myself moving. I've got too many ideas swimming in my head to stay sane, I HAVE to make games!</p><p>Keep in touch! :D</p>
+	</div>
+	
+
+</div>
+
+
+
+</body>
+
+</html>

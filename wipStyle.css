@@ -1,0 +1,92 @@
+:root {
+	--boxBorderShadowSize: 10px;
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(fonts/RobotoMono-Bold.ttf);
+}
+
+html {
+	background-color:black;
+	background-image:url("images/layer2.gif"),url("images/layer2.gif"),url("images/layer1.gif");
+	animation-name: backgroundScroll;
+	animation-duration:60s;
+	background-blend-mode: overlay,overlay,normal;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-size: 256px 256px;
+	background-position-x:128px,0px,0px;
+	
+}
+
+@keyframes backgroundScroll {
+  from {background-position-y: 0px;}
+  to {background-position-y: 1024px,512px,256px;}
+}
+
+body {
+	width:685px;
+	margin:auto;
+	
+}
+
+.titleBox {
+	width:99%;
+	height:38px;
+	margin:auto;
+	margin-top:calc(50vh - 312px);
+}
+
+p{
+	font-family: RobotoMono;
+	font-size: 26px;
+	color: white;
+	text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black,
+	-4px -4px black, 4px 4px black, 4px -4px black, -4px 4px black,
+	-4px 2px black, 2px 4px black, 4px 2px black, 2px -4px black,
+	-2px -4px black, -2px 4px black, 4px -2px black, -2px -4px black;
+}
+
+a {
+	text-decoration: none;
+}
+
+a p{
+	color: #ffe014;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #ff9717;
+}
+
+a p:hover{
+	color: #ff9717;
+}
+
+.homePageMainBox {
+	width:100%;
+	height:500px;
+	margin:auto;
+	
+	display:flex;
+}
+
+.homePageFeatured {
+	height:100%;
+	width:50%;
+	flex-grow: 1;
+	box-sizing: border-box;
+	border: dashed 5px white;
+	border-radius: 5px;
+	box-shadow:var(--boxBorderShadowSize) var(--boxBorderShadowSize) 0px black;
+	background-color:#000000EE;
+}
+
+.homePageFeatured img{ /* PLACEHOLDER */
+	position:absolute;
+	height:521px;
+	transform:translate(-15px, -15px );
+	
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>kaiakairos.net</title> <!-- sets tab name -->
+<link rel="icon" href="images/icon.png"> <!-- sets tab icon -->
+<link rel="stylesheet" href="indexStyle.css"> <!-- gets css -->
+
+</head>
+
+<script>
+
+function ribbonPush(index) {
+	document.getElementById("ribbon" + index).style.animation="navRibbonPush 0.1s ease forwards";
+	
+	for (let i = 0; i < 6; i++) {
+		document.getElementById("navBox" + i).style.animation = "none";
+		document.getElementById("navBox" + i).style.filter = "brightness(150%)";
+		if (i == index){document.getElementById("navBox" + i).style.backgroundPosition = "0px 0px";continue;}
+		document.getElementById("navBox" + i).style.backgroundPosition = "-64px 0px";
+		document.getElementById("navBox" + i).style.filter = "brightness(20%)";
+	}
+	
+}
+
+function ribbonPutAway(index) {
+	document.getElementById("ribbon" + index).style.animation="navRibbonPushBack 0.1s ease forwards";
+	for (let i = 0; i < 6; i++) {
+		
+		document.getElementById("navBox" + i).style.animation = "shuffle 2s ease-in-out infinite";
+		document.getElementById("navBox" + i).style.animationDelay = ((5 - i) * -0.3) + "s";
+		document.getElementById("navBox" + i).style.filter = "none";
+	}
+}
+
+function setAllRibbons() {
+	for (let i = 0; i < 6; i++) {
+	document.getElementById("ribbon" + i).style.transform = "translate(-20px, "+((i*80) + 1)+"px )";
+	}
+}
+
+function emptyLinkText() {
+	document.getElementById("linkPreview").textContent = "";
+}
+
+function setLinkPreviewText(text) {
+	document.getElementById("linkPreview").textContent = text;
+}
+
+function setFeatureBox(index,text,img,link) {
+	document.getElementById("featureBox" + index).style.backgroundImage = "url('images/homePage/bannerClouds.png'),url('images/FBanners/"+img+".png')"; 
+	document.getElementById("featureText" + index).textContent = text;
+	document.getElementById("featureLink" + index).href = link;
+}
+
+function initializePage() {
+	setAllRibbons();
+	setFeatureBox(0,"waxweaver available on steam for free!","waxweaver1","https://store.steampowered.com/app/3599070/waxweaver/");
+	setFeatureBox(1,"art world","art","https://kaiakairos.newgrounds.com/art");
+	setFeatureBox(2,"rpg game in development","rpgPreview","https://www.youtube.com/watch?v=csKB4ibijx4");
+}
+
+</script>
+
+<body onload="initializePage()">
+
+<div class="titleBox"><p>kaiakairos.net</p></div>
+
+<div class="homePageMainBox">
+	<div class="homePageNavigation">
+		<a href="about.html"> <div class="navigationBox" id="navBox0" onmouseenter='ribbonPush(0)' onmouseleave='ribbonPutAway(0)' style="background-image:url('images/homePage/navButton1.png');animation-delay:-1.5s;"> <p>about</p> </div></a>
+		<a href="wip.html"> <div class="navigationBox" id="navBox1" onmouseenter='ribbonPush(1)' onmouseleave='ribbonPutAway(1)' style="background-image:url('images/homePage/navButton2.png');animation-delay:-1.2s;"> <p>games</p> </div></a>
+		<a href="wip.html"> <div class="navigationBox" id="navBox2" onmouseenter='ribbonPush(2)' onmouseleave='ribbonPutAway(2)' style="background-image:url('images/homePage/navButton3.png');animation-delay:-0.9s;"> <p>comics</p> </div></a>
+		<a href="wip.html"> <div class="navigationBox" id="navBox3" onmouseenter='ribbonPush(3)' onmouseleave='ribbonPutAway(3)' style="background-image:url('images/homePage/navButton4.png');animation-delay:-0.6s;"> <p>art</p> </div></a>
+		<a href="wip.html"> <div class="navigationBox" id="navBox4" onmouseenter='ribbonPush(4)' onmouseleave='ribbonPutAway(4)' style="background-image:url('images/homePage/navButton5.png');animation-delay:-0.3s;"> <p>blog</p> </div></a>
+		<a href="wip.html"> <div class="navigationBox" id="navBox5" onmouseenter='ribbonPush(5)' onmouseleave='ribbonPutAway(5)' style="background-image:url('images/homePage/navButton6.png');animation-delay:-0.0s;"> <p>other</p> </div></a>
+		<img src="images/homePage/navRibbon1.png" id="ribbon0">
+		<img src="images/homePage/navRibbon2.png" id="ribbon1">
+		<img src="images/homePage/navRibbon3.png" id="ribbon2">
+		<img src="images/homePage/navRibbon4.png" id="ribbon3">
+		<img src="images/homePage/navRibbon5.png" id="ribbon4">
+		<img src="images/homePage/navRibbon6.png" id="ribbon5">
+	</div>
+	
+	<div class="homePageFeatured">
+		<a href="" id="featureLink0"><div class="featuredTab" id="featureBox0" > <img src="images/homePage/featureHighlight.png">  <p id="featureText0" >featureText</p> </div> </a> 
+		<a href="" id="featureLink1"><div class="featuredTab" id="featureBox1" > <img src="images/homePage/featureHighlight.png">  <p id="featureText1" >featureText</p> </div> </a>
+		<a href="" id="featureLink2"><div class="featuredTab" id="featureBox2" > <img src="images/homePage/featureHighlight.png">  <p id="featureText2" >featureText</p> </div> </a>
+	</div>
+	
+	<div class="homePageEmpty"> <!-- creates a spacing gap for the character -->
+		<img src="images/homePage/character.png">
+		<img src="images/homePage/homebanner.png" style="height:128px;transform:translate(-996px,-96.5px);z-index:-50;">
+	</div>
+
+</div>
+
+<div class="externalLinkBox">
+	<div class="linkContainer"> <a href="https://kaiakairos.newgrounds.com/"                 onmouseenter='setLinkPreviewText("NEWGROUNDS !")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkNewgrounds.png"> </a> </div>
+	<div class="linkContainer"> <a href="https://bsky.app/profile/kaiakairos.net"            onmouseenter='setLinkPreviewText("BLUESKY !")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkBluesky.png"> </a> </div>
+	<div class="linkContainer"> <a href="https://github.com/kaiakairos"                      onmouseenter='setLinkPreviewText("GIT ! HUB !")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkGithub.png"> </a> </div>
+	<div class="linkContainer"> <a href="https://kaiakairos.itch.io/"                        onmouseenter='setLinkPreviewText("ITCH DOT I O !")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkItch.png"> </a> </div>
+	<div class="linkContainer"> <a href="https://store.steampowered.com/developer/kaiakairos"onmouseenter='setLinkPreviewText("STEAM ! (my developer page not my personal account please stop trying to add me as a friend) ")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkSteam.png"> </a> </div>
+	<div class="linkContainer"> <a href="https://www.youtube.com/@kaiakairos"                onmouseenter='setLinkPreviewText("world famous youtube channel")' onmouseleave='emptyLinkText()' > <img src="images/homePage/linkYT.png"> </a> </div>
+</div>
+
+<div class="externalLinkBox" style="margin-top:32px;height:32px;"> 
+	<div class="linkContainer"> <p id="linkPreview"></p> </div>
+</div>
+
+</body>
+
+</html>
