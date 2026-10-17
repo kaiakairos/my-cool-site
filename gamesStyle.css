@@ -1,0 +1,155 @@
+:root {
+	--boxBorderShadowSize: 10px;
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(fonts/RobotoMono-Bold.ttf);
+}
+
+html {
+	background-color:black;
+	background-image:url("images/layer2.gif"),url("images/layer2.gif"),url("images/layer1.gif");
+	animation-name: backgroundScroll;
+	animation-duration:60s;
+	background-blend-mode: overlay,overlay,normal;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-size: 256px 256px;
+	background-position-x:128px,0px,0px;
+	
+}
+
+@keyframes backgroundScroll {
+  from {background-position-y: 0px;}
+  to {background-position-y: 1024px,512px,256px;}
+}
+
+body {
+	width:920px;
+	margin:auto;
+	
+}
+
+.titleBox {
+	width:99%;
+	height:38px;
+	margin:auto;
+	margin-top:calc(38vh - 312px);
+}
+
+p{
+	font-family: RobotoMono;
+	font-size: 26px;
+	color: white;
+	text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black,
+	-4px -4px black, 4px 4px black, 4px -4px black, -4px 4px black,
+	-4px 2px black, 2px 4px black, 4px 2px black, 2px -4px black,
+	-2px -4px black, -2px 4px black, 4px -2px black, -2px -4px black;
+}
+
+h1{
+	font-family: RobotoMono;
+	font-size: 48px;
+	color: #c9ff05;
+	margin:5px;
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+}
+
+a p{
+	color: #ffe014;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #ff9717;
+}
+
+a p:hover{
+	color: #ff9717;
+}
+
+.homePageMainBox {
+	width:100%;
+	height:auto;
+	margin:auto;
+	
+	display:flex;
+}
+
+.homePageFeatured {
+	height:100%;
+	width:50%;
+	flex-grow: 1;
+	box-sizing: border-box;
+	border: dashed 5px white;
+	border-radius: 5px;
+	box-shadow:var(--boxBorderShadowSize) var(--boxBorderShadowSize) 0px black;
+	background-color:#000000EE;
+	padding:10px;
+	text-align:center;
+}
+
+.homePageFeatured p {
+margin:auto;
+margin-top:20px;
+}
+
+.yearGameContainer {
+	display:grid;
+	grid-template-columns: max-content max-content max-content max-content;
+	width:100%;
+	align-items: center;
+	margin-bottom:64px;
+}
+
+
+.gameBox {
+	
+	width:200px;
+	height:230px;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:0px;
+	margin-left:18px;
+	
+	
+	background-size: 200px;
+	
+	border-radius: 8px;
+	
+	outline: 5px double black;
+	outline-offset: -5px;
+	
+	animation: fadeNormal 1s ease forwards;
+	
+	
+	z-index:-4;
+}
+
+.gameBox:hover{
+	filter: brightness(120%);
+	transform:translate(0px,2px) rotate(-5deg) scale(1.1);
+}
+
+.gameBox.quiet {
+  z-index:-4;
+  transform:scale(0.9);
+  animation: fadeDark 0.3s ease forwards;
+}
+
+@keyframes fadeNormal {
+  to {filter: brightness(100%);}
+}
+
+@keyframes fadeDark {
+	to {filter: brightness(20%);}
+}
+
+@keyframes fadeBright {
+  to {filter: brightness(120%);}
+}

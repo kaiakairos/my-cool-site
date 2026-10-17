@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>kaiakairos.net</title> <!-- sets tab name -->
+<link rel="icon" href="images/icon.png"> <!-- sets tab icon -->
+<link rel="stylesheet" href="gamesStyle.css"> <!-- gets css -->
+
+</head>
+
+
+
+<body>
+
+<div class="titleBox"><a href="index.html"> <p> <- back to home </p></a></div>
+
+<div class="homePageMainBox">
+	<div class="homePageFeatured">
+		<h1>GAMES</h1>
+		
+		<p>2026</p>
+		<div class="yearGameContainer">
+			<a href="https://www.newgrounds.com/portal/view/1037039"><div class="gameBox" style="background-image:url('images/gameIcons/hww.png')"></div></a>
+		</div>
+		
+		<p>2025</p>
+		<div class="yearGameContainer">
+			<a href="https://www.newgrounds.com/portal/view/1008522"><div class="gameBox" style="background-image:url('images/gameIcons/pbd.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/993132"><div class="gameBox" style="background-image:url('images/gameIcons/dragdrone.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/984301"><div class="gameBox" style="background-image:url('images/gameIcons/cardstock.png')"></div></a>
+			<a href="https://store.steampowered.com/app/3599070/waxweaver/"><div class="gameBox" style="background-image:url('images/gameIcons/waxweaver.png')"></div></a>
+		</div>
+		
+		<p>2024</p>
+		<div class="yearGameContainer">
+			<a href="https://www.newgrounds.com/portal/view/960979"><div class="gameBox" style="background-image:url('images/gameIcons/timmychristmas.png')"></div></a>
+			<a href="https://store.steampowered.com/app/2976450/Bug_Ball_3D/"><div class="gameBox" style="background-image:url('images/gameIcons/bugball.png')"></div></a>
+		</div>
+		
+		<p>2023</p>
+		<div class="yearGameContainer">
+			<a href="https://www.newgrounds.com/portal/view/903952"><div class="gameBox" style="background-image:url('images/gameIcons/scd.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/893572"><div class="gameBox" style="background-image:url('images/gameIcons/heliox.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/880386"><div class="gameBox" style="background-image:url('images/gameIcons/lunarworm.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/875403"><div class="gameBox" style="background-image:url('images/gameIcons/squadaddle.png')"></div></a>
+		</div>
+		
+		<p>2022</p>
+		<div class="yearGameContainer">
+			<a href="https://www.newgrounds.com/portal/view/867385"><div class="gameBox" style="background-image:url('images/gameIcons/cakequake.png')"></div></a>
+			<a href="https://www.newgrounds.com/portal/view/862753"><div class="gameBox" style="background-image:url('images/gameIcons/snackslice.png')"></div></a>
+		</div>
+
+	</div>
+</div>
+
+<script>
+
+const allGameBoxDivs = document.querySelectorAll('.gameBox');
+
+allGameBoxDivs.forEach(hoveredBox => {
+	hoveredBox.addEventListener('mouseenter', () => {
+		allGameBoxDivs.forEach(div => {
+			if (div !== hoveredBox) { div.classList.add('quiet'); }
+		});
+	});
+
+	hoveredBox.addEventListener('mouseleave', () => {allGameBoxDivs.forEach(div => { 
+		div.classList.remove('quiet'); 
+	}); }
+  );
+});
+
+
+
+</script>
+
+</body>
+
+</html>
